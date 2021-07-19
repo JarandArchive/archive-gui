@@ -13,6 +13,7 @@ import UserShape from "../shapes/UserShape";
 import Sidebar from "./Sidebar";
 import {useHistory} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {getLoginUrl} from "../utils/UrlUtils";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -62,7 +63,7 @@ function AppMenu({user}) {
     const handleTitleClick = () => history.push("/");
 
     const handleLogin = () => {
-        window.location.href = "https://auth.jarand.app/apps/new?client_id=arkivet-app&response_type=code&redirect_uri=https://arkivet.app&scope=archive-api.archive.write";
+        window.location.href = getLoginUrl();
     };
 
     const handleProfileMenuOpen = (event) => {
